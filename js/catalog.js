@@ -53,6 +53,7 @@ function updateCartPreview() {
     return;
   }
   var cartprev = document.createElement('p');
+  cartprev.classList.add('cart-prev');
   cartprev.textContent = `Added ${quantity} of ${selected} to cart`;
 
   var cartContents = document.getElementById('cartContents');
