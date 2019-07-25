@@ -38,8 +38,14 @@ legend{
 fieldset{
     text-align: center;
     font-size: 20px;
+}
+p{
+    text-align:center;
+    color:honeydew;
+    font-size:20px;
 
 }
+
 footer{
     text-align:center;
     margin-top:100%
@@ -56,6 +62,7 @@ h1#cart{
 table{
     margin: auto;
     margin-top:30px;
+    font-size:20px
 }
 th{
     border:3px solid burlywood;
@@ -64,7 +71,7 @@ th{
     color: honeydew;
 }
 tr{
-    border:1px solid burlywood;
+    border:3px solid burlywood;
     margin:10px;
     padding:10px;
     color:honeydew;
@@ -77,4 +84,7 @@ tbody{
     padding:10px;
     color:honeydew;
     
+}
+button.delete{
+    margin-left:20px
 }
