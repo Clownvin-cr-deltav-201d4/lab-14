@@ -1,35 +1,53 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <title>Bus Mall Store</title>
-  <link rel="stylesheet" href="css/reset.css" />
-  <link rel="stylesheet" href="css/style.css" />
-</head>
+  <head>
+    <title>Bus Mall Store</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Petit+Formal+Script&display=swap" rel="stylesheet">
+  </head>
 
-<body>
+  <body>
 
-  <header>
-    <h1>Bus Mall Store</h1>
-    <nav>
-      <ul>
-        <li id='index'><a href="index.html">Home</a></li>
-        <li id='cart'><a href="cart.html">Cart</a><span id="itemCount"></span></li>
-      </ul>
-    </nav>
-  </header>
+    <header>
+        <h1>Bus Mall Store</h1>
+        <nav>
+            <ul>
+                <li id='index'><a href="index.html">Home</a></li>
+                <li id='cart'><a href="cart.html">Cart</a><span id="itemCount"></span></li>
+            </ul>
+        </nav>
+    </header>
 
-  <main>
+    <main>
 
-    <section class="deck col-1">
-      <div class="card">
-        <header>
-          <h1 id='cart'>Your Cart</h1>
-        </header>
-        <div class="copy">
-          <ol>
-            <li>Click the "Delete" next to any item to remove it from your cart</li>
-          </ol>
+      <section class="deck col-1">
+        <div class="card">
+          <header>
+            <h1 id='cart'>Your Cart</h1>
+          </header>
+          <div class="copy">
+              <ol>
+                <li>Click the "Delete" next to any item to remove it from your cart</li>
+              </ol>
+          </div>
+        </div>
+      </section>
+
+      <section class="deck col-1">
+        <div class="card">
+            <table id="cart">
+                <thead>
+                    <tr>
+                        <th>Remove</th>
+                        <th>Item</th>
+                        <th>Quantity</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+                <tfoot></tfoot>
+            </table>
         </div>
       </div>
     </section>
