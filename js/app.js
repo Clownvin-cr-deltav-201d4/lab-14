@@ -6,13 +6,19 @@
 // properties, and builds an array of items as you create instances
 
 //This classes name was horrid. It is not a cart, but a "CartItem".
+let nextCartId = 0;
 class CartItem {
   constructor(product, quantity) {
     this.product = product;
     this.quantity = quantity;
+    this.id = nextCartId++;
   }
 }
 
+// TODO: Save the contents of the cart to Local Storage
+function saveCartToLocalStorage() {
+  window.localStorage.setItem('cart', JSON.stringify(cart));
+}
 
 // Product Contructor
 class Product {

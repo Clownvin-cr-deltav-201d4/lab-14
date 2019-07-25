@@ -37,15 +37,9 @@ function addSelectedItemToCart() {
   if (quantity <= 0) {
     alert('Quantity must be greater than 0.');
   }
-  console.log(`User carting ${quantity} ${selected}${quantity > 1 ? 's' : ''}`);
   cart.push(new CartItem(selected, quantity));
 }
 
-// TODO: Save the contents of the cart to Local Storage
-function saveCartToLocalStorage() {
-  window.localStorage.setItem('cart', JSON.stringify(cart));
-  console.log(window.localStorage.cart);
-}
 // TODO: Update the cart count in the header nav with the number of items in the Cart
 function updateCounter() {
   document.getElementById('itemCount').textContent = `(${cart.length})`;
@@ -59,7 +53,7 @@ function updateCartPreview() {
     return;
   }
   var cartprev = document.createElement('p');
-  cartprev.textContent = `${quantity} of ${selected}`;
+  cartprev.textContent = `Added ${quantity} of ${selected} to cart`;
 
   var cartContents = document.getElementById('cartContents');
   cartContents.appendChild(cartprev);
