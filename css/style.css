@@ -1,13 +1,11 @@
 /* TODO: Make it awesome */
-
 body{
     background-color:lightslategray;
     color: black;
-    border:solid white 5px;
+
 }
 nav{
     padding:10px;
-    border:solid white 5px;
 }
 li#index{
     float:left;
@@ -19,15 +17,13 @@ h1#derp{
     font-size: 50px;
     font-family: 'Petit Formal Script', cursive;
     color: lightgreen;
-    border:solid white 5px;
     text-align: center;
 }
 li{
-    
+
     font-size:25px;
     padding:1px;
-    border:solid white 5px;
-     
+
 }
 legend{
     text-align: center;
@@ -50,14 +46,18 @@ footer{
     text-align:center;
     margin-top:100%
 }
+h1 {
+  text-align: center;
+  font-size: 500%;
+}
 h1#cart{
     text-align:center;
     font-size:50px;
     color:honeydew;
     font-family: cursive;
     font-style: italic;
-    
-    
+
+
 }
 table{
     margin: auto;
@@ -76,7 +76,7 @@ tr{
     padding:10px;
     color:honeydew;
     text-align:center;
-    
+
 
 }
 tbody{
@@ -84,7 +84,7 @@ tbody{
     margin:10px;
     padding:10px;
     color:honeydew;
-    
+
 }
 button.delete{
     vertical-align: middle;
@@ -95,4 +95,22 @@ img{
 }
 td{
    vertical-align: middle;
+}
+.cart-prev {
+  animation-duration: 1s;
+  animation-name: flash;
+  animation-iteration-count: 1;
+}
+
+@keyframes flash {
+  0% {
+    box-shadow: none;
+  }
+  50% {
+    border-radius: 45px;
+    box-shadow: 0 0 15px #90ee90;
+  }
+  100% {
+    box-shadow: none;
+  }
 }
