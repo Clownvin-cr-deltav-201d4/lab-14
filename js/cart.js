@@ -1,24 +1,24 @@
 'use strict';
 
-var Cart = [];
+var cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 // Create an event listener so that when the delete link is clicked, the removeItemFromCart method is invoked.
 var table = document.getElementById('cart');
-table.addEventListener('click', removeItemFromCart);
-
-function loadCart() {
-  Cart = JSON.parse(localStorage.getItem('cart')) || [];
-}
+if (table)
+  table.addEventListener('click', removeItemFromCart);
 
 // Make magic happen --- re-pull the Cart, clear out the screen and re-draw it
 function renderCart() {
-  loadCart();
   clearCart();
   showCart();
 }
 
+clearCart();
+
 // TODO: Remove all of the rows (tr) in the cart table (tbody)
-function clearCart() {}
+function clearCart() {
+  console.log(table.querySelector('tbody'));
+}
 
 // TODO: Fill in the <tr>'s under the <tbody> for each item in the cart
 function showCart() {
