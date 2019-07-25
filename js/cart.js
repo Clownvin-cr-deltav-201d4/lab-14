@@ -28,6 +28,7 @@ function showCart() {
     let quantity = document.createElement('td');
     quantity.textContent = item.quantity;
     let itemData = document.createElement('td');
+    let itemTitle= document.createElement('h4');
     let img = document.createElement('img');
     img.classList.add('cartItem');
     for (let product of allProducts) {
@@ -35,8 +36,10 @@ function showCart() {
         continue;
       }
       img.setAttribute('src', product.filePath);
+      itemTitle.textContent = product.name;
       break;
     }
+    itemData.appendChild(itemTitle);
     itemData.appendChild(img);
     //itemData.textContent = item.product;
     itemRow.appendChild(quantity);
