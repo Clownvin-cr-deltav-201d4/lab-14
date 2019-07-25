@@ -37,15 +37,9 @@ function addSelectedItemToCart() {
   if (quantity <= 0) {
     alert('Quantity must be greater than 0.');
   }
-  console.log(`User carting ${quantity} ${selected}${quantity > 1 ? 's' : ''}`);
   cart.push(new CartItem(selected, quantity));
 }
 
-// TODO: Save the contents of the cart to Local Storage
-function saveCartToLocalStorage() {
-  window.localStorage.setItem('cart', JSON.stringify(cart));
-  console.log(window.localStorage.cart);
-}
 // TODO: Update the cart count in the header nav with the number of items in the Cart
 function updateCounter() {
   document.getElementById('itemCount').textContent = `(${cart.length})`;
@@ -53,6 +47,16 @@ function updateCounter() {
 
 // TODO: As you add items into the cart, show them (item & quantity) in the cart preview div
 function updateCartPreview() {
+  var selected = document.getElementById('items').value;
+  var quantity = document.getElementById('quantity').value;
+  if (quantity <= 0) {
+    return;
+  }
+  var cartprev = document.createElement('p');
+  cartprev.textContent = `Added ${quantity} of ${selected} to cart`;
+
+  var cartContents = document.getElementById('cartContents');
+  cartContents.appendChild(cartprev);
   // TODO: Get the item and quantity from the form
   // TODO: Add a new element to the cartContents div with that information
 }
@@ -67,4 +71,3 @@ catalogForm.addEventListener('submit', handleSubmit);
 // drop down list in the form.
 populateForm();
 updateCounter();
-updateCartPreview();

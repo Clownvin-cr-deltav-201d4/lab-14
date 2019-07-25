@@ -1,8 +1,7 @@
 'use strict';
 
 // Create an event listener so that when the delete link is clicked, the removeItemFromCart method is invoked.
-var table = document.getElementById('cart');
-table.addEventListener('click', removeItemFromCart);
+var table = document.querySelector('table#cart');
 
 // Make magic happen --- re-pull the Cart, clear out the screen and re-draw it
 function renderCart() {
@@ -17,16 +16,22 @@ function clearCart() {
 
 // TODO: Fill in the <tr>'s under the <tbody> for each item in the cart
 function showCart() {
+  console.log('Show table');
   let tbody = table.querySelector('tbody');
   for (let item of cart) {
     let itemRow = document.createElement('tr');
-    let deleteButton = document.createElement('td');
+    let deleteButton = document.createElement('button');
     deleteButton.classList.add('delete');
-    deleteButton.addEventListener('click', removeItemFromCart);
+    deleteButton.addEventListener('click', () => removeItemFromCart(item.id));
+    deleteButton.textContent = 'Delete';
     let quantity = document.createElement('td');
     quantity.textContent = item.quantity;
     let itemData = document.createElement('td');
     itemData.textContent = item.product;
+    itemRow.appendChild(quantity);
+    itemRow.appendChild(itemData);
+    itemRow.appendChild(deleteButton);
+    tbody.appendChild(itemRow);
   }
   // TODO: Find the table body
 
@@ -37,12 +42,16 @@ function showCart() {
 
 }
 
-function removeItemFromCart(event) {
-
-  // TODO: When a delete link is clicked, rebuild the Cart array without that item
-  // TODO: Save the cart back to local storage
-  // TODO: Re-draw the cart table
-
+function removeItemFromCart(id) {
+  for (var i = 0; i < cart.length; i++) {
+    if (cart[i].id !== id) {
+      continue;
+    }
+    cart.splice(i, 1);
+    break;
+  }
+  saveCartToLocalStorage(0);
+  renderCart();
 }
 
 // This will initialize the page and draw the cart on screen
