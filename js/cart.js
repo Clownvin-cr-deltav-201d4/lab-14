@@ -20,6 +20,7 @@ function showCart() {
   let tbody = table.querySelector('tbody');
   for (let item of cart) {
     let itemRow = document.createElement('tr');
+    let buttonCell = document.createElement('td');
     let deleteButton = document.createElement('button');
     deleteButton.classList.add('delete');
     deleteButton.addEventListener('click', () => removeItemFromCart(item.id));
@@ -27,10 +28,21 @@ function showCart() {
     let quantity = document.createElement('td');
     quantity.textContent = item.quantity;
     let itemData = document.createElement('td');
-    itemData.textContent = item.product;
+    let img = document.createElement('img');
+    img.classList.add('cartItem');
+    for (let product of allProducts) {
+      if (product.name !== item.product) {
+        continue;
+      }
+      img.setAttribute('src', product.filePath);
+      break;
+    }
+    itemData.appendChild(img);
+    //itemData.textContent = item.product;
     itemRow.appendChild(quantity);
     itemRow.appendChild(itemData);
-    itemRow.appendChild(deleteButton);
+    buttonCell.appendChild(deleteButton);
+    itemRow.appendChild(buttonCell);
     tbody.appendChild(itemRow);
   }
   // TODO: Find the table body
