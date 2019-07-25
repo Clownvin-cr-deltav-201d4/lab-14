@@ -1,7 +1,7 @@
 'use strict';
 
 // Create an event listener so that when the delete link is clicked, the removeItemFromCart method is invoked.
-var table = document.getElementById('cart');
+var table = document.querySelector('table#cart');
 table.addEventListener('click', removeItemFromCart);
 
 // Make magic happen --- re-pull the Cart, clear out the screen and re-draw it
@@ -17,6 +17,7 @@ function clearCart() {
 
 // TODO: Fill in the <tr>'s under the <tbody> for each item in the cart
 function showCart() {
+  console.log('Show table');
   let tbody = table.querySelector('tbody');
   for (let item of cart) {
     let itemRow = document.createElement('tr');
@@ -27,6 +28,10 @@ function showCart() {
     quantity.textContent = item.quantity;
     let itemData = document.createElement('td');
     itemData.textContent = item.product;
+    itemRow.appendChild(quantity);
+    itemRow.appendChild(itemData);
+    itemRow.appendChild(deleteButton);
+    tbody.appendChild(itemRow);
   }
   // TODO: Find the table body
 

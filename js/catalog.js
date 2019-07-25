@@ -53,6 +53,16 @@ function updateCounter() {
 
 // TODO: As you add items into the cart, show them (item & quantity) in the cart preview div
 function updateCartPreview() {
+  var selected = document.getElementById('items').value;
+  var quantity = document.getElementById('quantity').value;
+  if (quantity <= 0) {
+    return;
+  }
+  var cartprev = document.createElement('p');
+  cartprev.textContent = `${quantity} of ${selected}`;
+
+  var cartContents = document.getElementById('cartContents');
+  cartContents.appendChild(cartprev);
   // TODO: Get the item and quantity from the form
   // TODO: Add a new element to the cartContents div with that information
 }
@@ -67,4 +77,3 @@ catalogForm.addEventListener('submit', handleSubmit);
 // drop down list in the form.
 populateForm();
 updateCounter();
-updateCartPreview();
