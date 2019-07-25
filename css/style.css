@@ -17,7 +17,7 @@ li#index{
 h1#derp{
     padding:10px;
     font-size: 50px;
-    font-family: cursive;
+    font-family: 'Petit Formal Script', cursive;
     color: lightgreen;
     border:solid white 5px;
     text-align: center;
@@ -87,7 +87,7 @@ tbody{
     
 }
 button.delete{
-    vertical-align:middle;
+    vertical-align: middle;
 }
 img{
     height: 300px;
