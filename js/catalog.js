@@ -7,42 +7,49 @@
 function populateForm() {
 
   //TODO: Add an <option> tag inside the form's select for each product
+  //This name is also horrid... are they even trying?
   var selectElement = document.getElementById('items');
-  for (var i in Product.allProducts) {
 
+  for (var product of allProducts) {
+    var option = document.createElement('option');
+    option.textContent = product.name;
+    selectElement.appendChild(option);
   }
-
 }
 
 // When someone submits the form, we need to add the selected item to the cart
 // object, save the whole thing back to local storage and update the screen
 // so that it shows the # of items in the cart and a quick preview of the cart itself.
 function handleSubmit(event) {
-
-  // TODO: Prevent the page from reloading
+  event.preventDefault();
 
   // Do all the things ...
   addSelectedItemToCart();
   saveCartToLocalStorage();
   updateCounter();
   updateCartPreview();
-
 }
 
 // TODO: Add the selected item and quantity to the cart
 function addSelectedItemToCart() {
-  // TODO: suss out the item picked from the select list
-  // TODO: get the quantity
-  // TODO: using those, create a new Cart item instance
+  var selected = document.getElementById('items').value;
+  var quantity = document.getElementById('quantity').value;
+  if (quantity <= 0) {
+    alert('Quantity must be greater than 0.');
+  }
+  console.log(`User carting ${quantity} ${selected}${quantity > 1 ? 's' : ''}`);
+  cart.push(new CartItem(selected, quantity));
 }
 
 // TODO: Save the contents of the cart to Local Storage
 function saveCartToLocalStorage() {
-
+  window.localStorage.setItem('cart', JSON.stringify(cart));
+  console.log(window.localStorage.cart);
 }
-
 // TODO: Update the cart count in the header nav with the number of items in the Cart
-function updateCounter() {}
+function updateCounter() {
+  document.getElementById('itemCount').textContent = `(${cart.length})`;
+}
 
 // TODO: As you add items into the cart, show them (item & quantity) in the cart preview div
 function updateCartPreview() {
@@ -59,3 +66,5 @@ catalogForm.addEventListener('submit', handleSubmit);
 // Before anything else of value can happen, we need to fill in the select
 // drop down list in the form.
 populateForm();
+updateCounter();
+updateCartPreview();
