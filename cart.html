@@ -60,15 +60,15 @@
   <fieldset>
     <legend>Billing Information</legend>
     <label for="name">Name</label>
-    <input type="text" id="name" name="name" placeholder="First and Last"></input>
+    <input type="text" id="name" name="name" placeholder="First and Last" required></input>
     <br>
     <label for="street">Street</label>
-    <input type="text" id="street" name="street" placeholder="1234 xyz ct"></input>
+    <input type="text" id="street" name="street" placeholder="1234 xyz ct" required></input>
     <br>
     <label for="city">City</label>
-    <input type="text" id="city" name="city" placeholder="Cedar Rapids"></input>
+    <input type="text" id="city" name="city" placeholder="Cedar Rapids" required></input>
     <label for="state">State</label>
-    <select id="state" name="state">
+    <select id="state" name="state" required>
       <option>
         IA
       </option>
@@ -84,18 +84,18 @@
     </select>
     <br>
     <label for="zip">ZIP</label>
-    <input type="number" id="zip" name="zip" placeholder="12345"></input>
+    <input type="number" id="zip" name="zip" placeholder="12345" required></input>
     <br>
     <label for="phone">Phone Number</label>
-    <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required></input>
+    <input type="tel" id="phone" name="phone" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" required></input>
   </fieldset>
   <fieldset>
     <legend>Credit Card Info</legend>
     <label for="cvc">CVC</label>
-    <input type="number" id="cvc" name="cvc" placeholder="123"></input>
+    <input type="number" id="cvc" name="cvc" placeholder="123" required></input>
     <label for="card">Credit Card Number</label>
-    <input type="tel" id="card" name="card" pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}" required></input>
-    <select id="month" name="month">
+    <input type="tel" id="card" name="card" pattern="[0-9]{4}[0-9]{4}[0-9]{4}[0-9]{4}" required></input>
+    <select id="month" name="month" required>
       <option>
         1
       </option>
@@ -112,7 +112,7 @@
         etc..
       </option>
     </select>
-    <select id="year" name="year">
+    <select id="year" name="year" required>
       <option>
         2016
       </option>
