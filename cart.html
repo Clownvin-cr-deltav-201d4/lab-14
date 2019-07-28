@@ -58,18 +58,89 @@
     An input of type="number" to enter a 16-digit credit card number.
   -->
   <fieldset>
-    <legend>Submit Order</legend>
+    <legend>Billing Information</legend>
     <label for="name">Name</label>
-    <input type="text" id="name" placeholder="Ur name"></input>
-    </form>
-  </main>
+    <input type="text" id="name" name="name" placeholder="First and Last"></input>
+    <br>
+    <label for="street">Street</label>
+    <input type="text" id="street" name="street" placeholder="1234 xyz ct"></input>
+    <br>
+    <label for="city">City</label>
+    <input type="text" id="city" name="city" placeholder="Cedar Rapids"></input>
+    <label for="state">State</label>
+    <select id="state" name="state">
+      <option>
+        IA
+      </option>
+      <option>
+        WA
+      </option>
+      <option>
+        CA
+      </option>
+      <option>
+        NY
+      </option>
+    </select>
+    <br>
+    <label for="zip">ZIP</label>
+    <input type="number" id="zip" name="zip" placeholder="12345"></input>
+    <br>
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required></input>
+  </fieldset>
+  <fieldset>
+    <legend>Credit Card Info</legend>
+    <label for="cvc">CVC</label>
+    <input type="number" id="cvc" name="cvc" placeholder="123"></input>
+    <label for="card">Credit Card Number</label>
+    <input type="tel" id="card" name="card" pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}" required></input>
+    <select id="month" name="month">
+      <option>
+        1
+      </option>
+      <option>
+        2
+      </option>
+      <option>
+        3
+      </option>
+      <option>
+        4
+      </option>
+      <option>
+        etc..
+      </option>
+    </select>
+    <select id="year" name="year">
+      <option>
+        2016
+      </option>
+      <option>
+        2017
+      </option>
+      <option>
+        2018
+      </option>
+      <option>
+        2019
+      </option>
+      <option>
+        etc..
+      </option>
+    </select>
+  </fieldset>
+  <input type="submit" id="order" name="order" value="Place Order"></input>
+</form>
 
-  <footer>
-    <p>&copy;2018 Code Fellows 201d33</p>
-  </footer>
+</main>
 
-  <script src='js/app.js'></script>
-  <script src='js/cart.js'></script>
+<footer>
+  <p>&copy;2018 Code Fellows 201d33</p>
+</footer>
+
+<script src='js/app.js'></script>
+<script src='js/cart.js'></script>
 </body>
 
 </html>
