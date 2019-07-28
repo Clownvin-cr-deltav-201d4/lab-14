@@ -52,9 +52,12 @@ function updateCartPreview() {
   if (quantity <= 0) {
     return;
   }
-  var cartprev = document.createElement('p');
+  var cartprev = document.createElement('a');
+  cartprev.href='cart.html';
+  var text = document.createTextNode(`Added ${quantity} of ${selected} to cart`)
   cartprev.classList.add('cart-prev');
-  cartprev.textContent = `Added ${quantity} of ${selected} to cart`;
+  cartprev.appendChild(text)
+ 
 
   var cartContents = document.getElementById('cartContents');
   cartContents.appendChild(cartprev);
