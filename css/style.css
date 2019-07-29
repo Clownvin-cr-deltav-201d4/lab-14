@@ -102,6 +102,9 @@ td{
   animation-iteration-count: 1;
   margin: 10px auto;
 }
+#confirmation {
+  animation-name: flash;
+}
 
 @keyframes flash {
   0% {

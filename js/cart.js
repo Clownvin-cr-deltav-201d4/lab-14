@@ -91,7 +91,7 @@ function removeItemFromCart(id) {
     cart.splice(i, 1);
     break;
   }
-  saveCartToLocalStorage(0);
+  saveCartToLocalStorage();
   renderCart();
 }
 
