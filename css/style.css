@@ -96,15 +96,13 @@ img{
 td{
    vertical-align: middle;
 }
-.cart-prev {
+.cart-prev, #confirmation {
   animation-duration: 1s;
   animation-name: flash;
-  animation-iteration-count: 1;
+  animation-iteration-count: infinite;
   margin: 10px auto;
 }
-#confirmation {
-  animation-name: flash;
-}
+
 
 @keyframes flash {
   0% {
