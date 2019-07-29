@@ -56,6 +56,32 @@ function showCart() {
   // TODO: Add the TR to the TBODY and each of the TD's to the TR
 
 }
+var form = document.getElementById('order-form');
+form.addEventListener('submit', function(event){
+  event.preventDefault();
+ resetForm(form);
+ cart = [];
+ saveCartToLocalStorage();
+ renderCart();
+ var msg = document.getElementById('confirmation');
+ console.log(msg);
+ document.getElementById('confirmation').textContent = 'Your order has been placed';
+})
+function resetForm(form){
+  var inputs = form.getElementsByTagName('input');
+  for (var input of inputs){
+    if (input.id === 'order'){
+     
+      continue;
+    }
+    input.value = '';
+  }
+  var selects = form.getElementsByTagName('select');
+  for (var select of selects){
+    select.selectedIndex = 0;
+  }
+}
+
 
 function removeItemFromCart(id) {
   for (var i = 0; i < cart.length; i++) {
